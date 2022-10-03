@@ -10,6 +10,6 @@ do
   echo "$rec_column5"
   echo ""
 
- "sudo useradd -u $rec_column1 -p $rec_column4 $rec_column3" 
+echo "sudo useradd -u $rec_column1 -p $rec_column4 $rec_column3" 
 
 done < <(tail -n +2 Shell.csv)

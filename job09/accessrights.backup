@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+
+
+while IFS="," read -r user passwd ; do      
+        echo "useradd -m -p $(mkpasswd "$passwd") $user"
+done < /home/$USER/Downloads/users.txt
+
