@@ -1,9 +1,15 @@
-#!/bin/bash
+#! /bin/bash
 
+#format is : Id,Prenom,Nom,Mdp,Rôle
+while IFS="," read -r rec_column1 rec_column2 rec_column3 rec_column4 rec_column5
+do
+  echo "$rec_column1"
+  echo "$rec_column2"
+  echo "$rec_column3"
+  echo "$rec_column4"
+  echo "$rec_column5"
+  echo ""
 
+ sudo useradd -u "$rec_column1 -p $rec_column4 $rec_column3" 
 
-
-while IFS="," read -r user passwd ; do      
-        echo "useradd -m -p $(mkpasswd "$passwd") $user"
-done < /home/$USER/Downloads/users.txt
-
+done < <(tail -n +2 Shell.csv)
